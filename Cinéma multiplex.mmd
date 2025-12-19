@@ -1,0 +1,38 @@
+erDiagram
+    FILM {
+        int id
+        string titre
+        string genre
+        int duree
+    }
+
+    SALLE {
+        int id
+        string nom
+        int capacite
+    }
+
+    SESSION {
+        int id
+        date date
+        string heure
+    }
+
+    CLIENT {
+        int id
+        string nom
+        string prenom
+        string email
+        string telephone
+    }
+
+    BILLET {
+        int id
+        float prix
+        string place
+    }
+
+    FILM ||--o{ SESSION : "est projeté"
+    SALLE ||--o{ SESSION : "accueille"
+    SESSION ||--o{ BILLET : "génère"
+    CLIENT ||--o{ BILLET : "achète"

@@ -1,0 +1,33 @@
+erDiagram
+    PATIENT {
+        int id
+        string nom
+        string prenom
+        date date_naissance
+        string telephone
+    }
+
+    MEDECIN {
+        int id
+        string nom
+        string prenom
+    }
+
+    SPECIALITE {
+        int id
+        string libelle
+    }
+
+    CONSULTATION {
+        int id
+        date date_consultation
+        string heure
+        int duree
+        string diagnostic
+        float tarif
+        string statut
+    }
+
+    PATIENT ||--o{ CONSULTATION : "a"
+    MEDECIN ||--o{ CONSULTATION : "effectue"
+    SPECIALITE ||--o{ MEDECIN : "regroupe"
